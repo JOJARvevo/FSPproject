@@ -1,0 +1,196 @@
+:root {
+    --bg: #f7f7fb;
+    --text: #1f1f2e;
+    --muted: #6c757d;
+    --card: #ffffff;
+    --accent: #0d6efd;
+    --subtle: #eef2ff;
+    --border: #e5e7eb;
+}
+
+[data-theme="dark"] {
+    --bg: #0f1221;
+    --text: #e5e7f3;
+    --muted: #9aa3b4;
+    --card: #161a2d;
+    --accent: #8ab4ff;
+    --subtle: #1c2038;
+    --border: #2a2f45;
+}
+
+body {
+    font-family: "Montserrat", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.bg-pattern {
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(13, 110, 253, 0.12), transparent 25%),
+        radial-gradient(circle at 80% 0%, rgba(119, 0, 255, 0.1), transparent 18%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1), transparent 45%);
+    background-size: cover;
+}
+
+.hero {
+    min-height: 75vh;
+    background: linear-gradient(120deg, #0d6efd 0%, #4c2fff 60%, #ff6ec7 100%);
+    overflow: hidden;
+}
+
+.hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.15), transparent 30%),
+        radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.2), transparent 25%);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+}
+
+.countdown-card .time-block {
+    text-align: center;
+    width: 22%;
+}
+
+.time-number {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #0d1b38;
+}
+
+.time-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.pulse-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #dc3545;
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.6);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 16px rgba(220, 53, 69, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+    }
+}
+
+.info-card,
+.program-card,
+.contact-card,
+.map-placeholder {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card:hover,
+.program-card:hover,
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.program-time {
+    width: 72px;
+    min-width: 72px;
+    height: 72px;
+    border-radius: 14px;
+    background: var(--subtle);
+    color: var(--text);
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+}
+
+.icon-circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.contact-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--subtle);
+    color: var(--text);
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+}
+
+.map-placeholder {
+    border-style: dashed;
+    background: var(--subtle);
+}
+
+.theme-toggle {
+    border-color: rgba(255, 255, 255, 0.6);
+    color: #fff;
+}
+
+[data-theme="dark"] body {
+    background: var(--bg);
+}
+
+[data-theme="dark"] .hero {
+    background: linear-gradient(120deg, #0a0f1f 0%, #1b2135 60%, #111827 100%);
+}
+
+[data-theme="dark"] .glass-card {
+    background: rgba(22, 26, 45, 0.9);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .time-number {
+    color: #f8f9ff;
+}
+
+[data-theme="dark"] .time-label {
+    color: #9aa3b4;
+}
+
+[data-theme="dark"] .info-card,
+[data-theme="dark"] .program-card,
+[data-theme="dark"] .contact-card,
+[data-theme="dark"] .map-placeholder {
+    background: var(--card);
+    border-color: var(--border);
+}
+
+[data-theme="dark"] .program-time {
+    background: rgba(138, 180, 255, 0.1);
+}
+
+.btn-primary {
+    background: linear-gradient(120deg, #0d6efd, #6a34ff);
+    border: none;
+}
+
+.btn-primary:hover {
+    filter: brightness(0.95);
+}
+
+.light-label,
+.dark-label {
+    font-size: 0.85rem;
+}
